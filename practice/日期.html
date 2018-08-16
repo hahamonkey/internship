@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*程序思想：
+    * 1、通过prompt输入自己年月日；
+    * 2、给输入得到的字符串*1转化为数值类型，分别传给year、month、date,如果不能转化为数值类型就说明不是输入的数字，得到NaN
+    * 3、如果其中有一个或多个NaN，通过!year,!month,!date，其中只要一个成立说明输入有误
+    * 4、如果输入的是正常的数值类型，接着判断在某年是否有该月和该天:
+    *   (1)首先会想到，如何让输入的年月日与一个相对正确的年月日作比较，当然，我们会想到用getFullYear,getMonth,getDate;
+    *   (2)这几个函数都是从Date对象中取到的，当然我们不能直接new Date()来取值，没有意义
+    *   (3)getFullYear,getMonth,getDate有一个机制，首先会计算取得的值在某一年是否有该月该日
+    *      当然年份只要是四位数默认都是正确的，然后通过闰年和非闰年判断这一年具体某日的天数，
+    *      如果取到的月份超过12，会计算减去12的整数倍直到小于12,如果取到的天大于30或31，根据具体
+    *      月份判断减去30或31的整数倍，知道小于30或31
+    *   (4)那么了解了这三个函数的机制，我们就new Date()，然后把输入的值设置为待会取到的值，然后把最后取到的结果
+    *       与输入值作比较，如果相等，说明输入的没有问题，年月日输入都符合规则，合理*/
+    var year = window.prompt("请输入出生年份")*1;  //输入1234
+    var month = prompt("请输入出生月份")*1;    //输入12
+    var date = prompt("请输入出生日")*1;
+    if(!year || !month || !date) {
+        alert("您的输入有误");
+    } else {
+        var timeMachine = new Date();
+        timeMachine.setFullYear(year);
+        timeMachine.setMonth(month-1);  //设置月份setMonth()中传入的实参比真实的月份数小一，这里面是从0开始计数的
+        timeMachine.setDate(date);
+        var trueYear = timeMachine.getFullYear();   //getFullYear()表示从Date对象以四位数字返回年份
+        var trueMonth = timeMachine.getMonth() + 1;
+        var trueDate = timeMachine.getDate();
+        console.log(trueYear,trueMonth,trueDate);
+        if(trueYear != year || trueMonth != month || trueDate != date){
+            alert("您撒谎！");
+        } else {
+            alert("虽然这个时光机能知道输入的日期是否有效，但至于是否真实无从而知！")
+        }
+    }
+</script>
+</body>
+</html>
