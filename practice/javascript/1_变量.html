@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*变量的命名方式是怎样的*/
+       /* var a = 5;
+        var b = 'abc';
+        var c = "bcd";  //对于字符串，"" 和 '' 是一样的
+        console.log(a,b,c);  //5 "abc" "bcd" ,console.log() 原样输出原来的数据类型*/
+
+//        js几种基本数据类型： undefined null String Number Boolean
+//        一种复杂数据类型：Object
+
+//        var x;
+//        console.log(x);   //undefined
+//        var y = null;
+//        console.log(y);  //null
+
+//        var s1 = "Hello";
+//        s1 = s1 + "World";
+//        var b = alert(s1);
+//        console.log(alert(s1)); //undefined,console.log()中如果包含的是一个表达式，首先会执行表达式，然后输出
+//        console.log(b); //undefined 可以知道alert是没有返回值的，只是一个警告弹框
+
+//        var c = 12;
+//        c++;
+//        console.log(c); //13
+//        console.log(++c);   //14
+
+//        var a = 1;
+//        var b = 'abc';
+//        var c = '3';
+//        var d = a + c;
+//        console.log(b); //abc 在控制台中输出的字符串有的时候不会带引号的，所以有时候不利于区分数值型字符串它的真正类型
+//        console.log(typeof d);  //string
+//        console.log(a+b);   //1abc,对于包含字符串的加法，其他类型会转化为字符串类型然后做拼接
+
+////        &&和||操作符的对表达式执行的影响
+//        console.log(2<3 && alert("hah"));   //undefined
+//        console.log(2>3 || alert("hah"));   //undefined
+//        console.log(!true); //false
+//        对于&&和||表达式，他们的输出结果是什么
+//        var b= "" || "    ";    //""和"  "这两种字符串转化为数值均为0
+//        if("  ") {
+//            alert('"  "是一个非空字符串，它的布尔值为true');   //出现弹层，"  "为真
+//        }
+//        console.log(b);
+//        console.log(2>3 || 5-3);  //2
+
+//        不同符号下不同类型的变量进行运算时是怎样做类型转换的
+//        var a = 123;
+//        var b = 'abc',c = '123';
+//        console.log(c); //123 通过比较下面两行行的输出可以知道，当console.log()中只存在一个或多个字符串类型的值，控制台中是不显示引号的；如果存在字符串同时还有其它类型的数值，那么控制台中会以双引号的形式输出字符串
+//        console.log("abc","abd"); //abc abd
+//        console.log(a*b,a*c,a+c,c);   //NaN 15129 "123123",注意此时控制台中输出中间没有逗号
+
+//        var str = prompt('请输入数字','123'); //输入框中默认会把输入的值作为字符串类型，例如输入"ajfkkdaf;"输出的是"ajfkkdaf;"，如果输入'ajfkkdaf;'，输出的是'ajfkkdaf;'
+//        console.log(str);   //这里str输出的是弹框内输入的值
+//        console.log(typeof str);    //string 可以知道prompt返回的是输入的值，而且数值类型是字符串
+
+//        var i = 10;
+//        j = 20;
+//        console.log(i + "," + j); //10,20  这里可能就对于console.log(1,2,3)输出不带逗号有了较好的理解，如果本身带逗号，再向其中添加了新的逗号，感觉很混乱
+
+////var的特点有哪些，与let有哪些区别
+//        function aa() {         //函数的写法是怎样的？
+//            var x = 10;
+//            return x;
+//        }
+//        var c = aa();
+//        alert(c);
+//        var d;
+//        console.log(d); //undefined
+
+//        var a = new String();   //字符串的创建方式和表现形式
+//        var b = 'abc';
+//        console.log(b.length); //3  字符串的属性和方法有哪些
+
+////什么是深拷贝、浅拷贝，对象直接赋值是浅拷贝，用什么方式可以解决这个问题
+//        var a = 5;
+//        var b = a;
+//        a = 30;
+//        console.log(b);     //5
+//        var person = {
+//            name: 'zhangsan',
+//            age: 20
+//        };                      //对象字面量方式的对象后面有分号
+//        var person1 = person;
+//        person.name = 'lisi';
+//        console.log(person1.name);  //lisi
+
+    </script>
+</body>
+</html>
